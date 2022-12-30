@@ -1,4 +1,24 @@
+ls
 https://www.youtube.com/watch?v=Wuuiga0wKdQ
+
+create folders waar je ze wilt 
+PS C:\Users\User\Documents\GitHub\Interface_Rental_Software> python -m venv work_env
+hiermee maak je een venv aan, maakt automatisch de folder
+
+maak dan een folder aan voor VSCode waarin je verwijst naar de venv
+ga naar workspace settings en switch naar json view, maak daarin deze regel aan
+"python.pythonPath": "C:\\Users\\User\\Documents\\GitHub\\Interface_Rental_Software\\work_env\\Scripts\\python"
+
+en activeer hem zoals hieronder 
+
+PS C:\Users\User\Documents\GitHub\Interface_Rental_Software> & C:\Users\User\Documents\GitHub\Interface_Rental_Software\work_env\Scripts\Activate.ps1
+(work_env) PS C:\Users\User\Documents\GitHub\Interface_Rental_Software> 
+
+
+change folder below
+
+PS C:\Users\User\Documents\AAA\work\demo> & C:\Users\User\Documents\AAA\work\test-env\Scripts\Activate.ps1
+
 dit filmpje gekeken, als je exact de stappen volgt werkt het. Je maakt een venv aan in de root van je project. Dit doe je volgens mij elke keer als je een project begint. .
 You can then use this file to install the same packages and versions in another environment by running the following command:
 

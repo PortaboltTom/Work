@@ -1,0 +1,15 @@
+https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+conda create --prefix ./envs jupyterlab=3.2 matplotlib=3.5 numpy=1.21
+hiermee zet je op specifieke locatie
+
+conda activate ./envs
+
+conda deactivate (als je wilt sluiten)
+
+conda list --explicit > spec-file.txt
+hiermee schrijf je alles weg naar file in je root
+
+conda create --name myenv --file spec-file.txt
+hiermee creeer je op een andere machine de identieke venv, dit zet je onder version control
+

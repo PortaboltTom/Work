@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <h1>Contracts App</h1>
+    <form method="post" action="/add_contract">
+      <input type="submit" value="Add contract">
+    </form>
+    <form method="post" action="/add_item">
+      <label for="item_type">Item type:</label>
+      <select id="item_type" name="item_type">
+        <option value="InverterRack">Inverter Rack</option>
+        <option value="BatteryRack">Battery Rack</option>
+        <option value="Trailer">Trailer</option>
+      </select><br>
+      <input type="submit" value="Add item">
+    </form>
+    <a href="/view_contracts">View contracts</a>
+  </body>
+</html>

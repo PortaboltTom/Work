@@ -1,17 +1,18 @@
+from datetime import datetime, timedelta
 from dataclasses import dataclass, field
-from typing import Type
-
+from typing import Type, List
+from enum import Enum, auto
 used_items = set()
 
 @dataclass
 class InverterRack:
     build_date: str
     rental_price: float = 0.0
-    power: int = None
+    power: int = 0
 
-    def __post_init__(self):
-        if self.power is None:
-            raise ValueError("Power must be set.")
+    def __hash__(self):
+        return hash(self.build_date)
+
 @dataclass
 class BatteryRack:
     build_date: str
@@ -24,6 +25,8 @@ class BatteryRack:
 class Trailer:
     build_date: str
     rental_price: float = 0.0
+    #size: str
+
 
     def __hash__(self):
         return hash(self.build_date)
@@ -34,13 +37,15 @@ class Contract:
     removed_items: list = field(default_factory=list)
     total_cost: float = 0.0
     
-    def add_item(self, items: list):
+    def add_items(self, items: List[Type], start_date: datetime, end_date: datetime = None):
         added_items = []
         for item in items:
             if item in used_items:
                 print(f'{item.__class__.__name__} has already been used and will not be added to the contract')
             else:
                 used_items.add(item)
+                item.start_date = start_date
+                item.end_date = end_date
                 self.items.append(item)
                 self.total_cost += item.rental_price
                 added_items.append(item)
@@ -54,48 +59,22 @@ class Contract:
         self.total_cost -= item.rental_price
         self.removed_items.append(item)
         print(f'removing {item.__class__.__name__} from contract')
-        
-    def generate_invoice(self, period: int):
-        invoice_total = self.total_cost * period
-        for item in self.removed_items:
-            invoice_total += item.rental_price * period
-        print(f'Invoice total: {invoice_total:.2f}')
     
+    def generate_invoice(self, period: int):
+        invoice_total = 0.0
+        for item in self.items:
+            rental_period = period
+            if item.end_date:
+                rental_period = (item.end_date - item.start_date).days // 7
+            invoice_total += item.rental_price * rental_period
+        for item in self.removed_items:
+            rental_period = period
+            if item.end_date:
+                rental_period = (item.end_date - item.start_date).days // 7
+            invoice_total += item.rental_price * rental_period
+        print(f'Invoice total: {invoice_total:.2f}')
+        
     def print_items(self):
         for item in self.items:
             print(item.__class__.__name__)
 
-inverter_rack = InverterRack(build_date='2022-01-01', rental_price=100.0)
-battery_rack = BatteryRack(build_date='2022-01-02', rental_price=200.0)
-trailer = Trailer(build_date='2022-01-03', rental_price=300.0)
-
-contract = Contract()
-contract.add_item([inverter_rack, battery_rack, trailer, trailer])
-contract.remove_item(trailer)
-contract.print_items()
-
-'''
-contract.add_item(battery_rack)
-contract.add_item(trailer)
-
-contract.generate_invoice(4)  # Output: Invoice total: 1200.00
-
-
-inverter_rack = InverterRack(build_date='2022-01-01', rental_price = 60)
-battery_rack = BatteryRack(build_date='2022-01-02', rental_price = 20)
-trailer = Trailer(build_date='2022-01-03', rental_price = 40)
-contract = Contract()
-
-
-contract.add_item(inverter_rack)
-contract.add_item(battery_rack)
-contract.add_item(trailer)
-contract.remove_item(inverter_rack)
-
-print(contract.items)  # Output: [InverterRack(build_date='2022-01-01'), BatteryRack(build_date='2022-01-02'), Trailer(build_date='2022-01-03')]
-
-try:
-    contract.add_item(inverter_rack)
-except ValueError as e:
-    print(e)  # Output: item has already been used
-'''

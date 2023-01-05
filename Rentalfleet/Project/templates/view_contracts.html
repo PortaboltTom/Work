@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <h1>Contracts</h1>
+    <ul>
+      {% for contract, items in zip(contracts, contract_items) %}
+        <li>Contract {{ loop.index }}:</li>
+          <ul>
+            {% for item in items %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+      {% endfor %}
+    </ul>
+ 

@@ -5,47 +5,19 @@ from enum import Enum, auto
 used_items = set()
 
 @dataclass
-class InverterRack:
-    build_date: str
-    rental_price: float = 0.0
-    power: int = 0
-
-    def __hash__(self):
-        return hash(self.build_date)
-
-@dataclass
-class BatteryRack:
-    build_date: str
-    rental_price: float = 0.0
-
-    def __hash__(self):
-        return hash(self.build_date)
-
-@dataclass
-class Trailer:
-    build_date: str
-    rental_price: float = 0.0
-    #size: str
-
-
-    def __hash__(self):
-        return hash(self.build_date)
-
-@dataclass
 class Contract:
-    items: list = field(default_factory=list)
-    removed_items: list = field(default_factory=list)
+    name: str
+    items: List[Type] = field(default_factory=list)
+    removed_items: List[Type] = field(default_factory=list)
     total_cost: float = 0.0
     
     def add_items(self, items: List[Type], start_date: datetime, end_date: datetime = None):
         added_items = []
         for item in items:
-            if item in used_items:
-                print(f'{item.__class__.__name__} has already been used and will not be added to the contract')
+            if hasattr(item, "current_contract") and item.current_contract:
+                print(f'{item.__class__.__name__} is already in contract {item.current_contract} and will not be added to this contract')
             else:
-                used_items.add(item)
-                item.start_date = start_date
-                item.end_date = end_date
+                item.current_contract = self.name
                 self.items.append(item)
                 self.total_cost += item.rental_price
                 added_items.append(item)
@@ -54,7 +26,7 @@ class Contract:
     def remove_item(self, item: Type):
         if item not in self.items:
             raise ValueError('item is not in contract')
-        used_items.remove(item)
+        item.current_contract = None
         self.items.remove(item)
         self.total_cost -= item.rental_price
         self.removed_items.append(item)
@@ -77,4 +49,33 @@ class Contract:
     def print_items(self):
         for item in self.items:
             print(item.__class__.__name__)
+
+@dataclass
+class InverterRack:
+    build_date: str
+    rental_price: float = 0.0
+    power: int = 0
+    current_contract: Type[Contract] = None
+
+    def __hash__(self):
+        return hash(self.build_date)
+
+@dataclass
+class BatteryRack:
+    build_date: str
+    rental_price: float = 0.0
+    current_contract: Type[Contract] = None
+    
+    def __hash__(self):
+        return hash(self.build_date)
+
+@dataclass
+class Trailer:
+    build_date: str
+    rental_price: float = 0.0
+    current_contract: Type[Contract] = None
+
+    def __hash__(self):
+        return hash(self.build_date)
+
 

@@ -26,6 +26,7 @@ class Contract:
     def remove_item(self, item: Type):
         if item not in self.items:
             raise ValueError('item is not in contract')
+        item.previous_contracts.append(item.current_contract)
         item.current_contract = None
         self.items.remove(item)
         self.total_cost -= item.rental_price
@@ -54,8 +55,9 @@ class Contract:
 class InverterRack:
     build_date: str
     rental_price: float = 0.0
-    power: int = 0
+    power: int=0
     current_contract: Type[Contract] = None
+    previous_contracts: List[Type[Contract]] = field(default_factory=list)
 
     def __hash__(self):
         return hash(self.build_date)
@@ -65,7 +67,8 @@ class BatteryRack:
     build_date: str
     rental_price: float = 0.0
     current_contract: Type[Contract] = None
-    
+    previous_contracts: List[Type[Contract]] = field(default_factory=list)
+
     def __hash__(self):
         return hash(self.build_date)
 
@@ -73,7 +76,9 @@ class BatteryRack:
 class Trailer:
     build_date: str
     rental_price: float = 0.0
+
     current_contract: Type[Contract] = None
+    previous_contracts: List[Type[Contract]] = field(default_factory=list)
 
     def __hash__(self):
         return hash(self.build_date)

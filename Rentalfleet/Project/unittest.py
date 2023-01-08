@@ -20,10 +20,25 @@ PB01 = Trailer(build_date='2022-01-03', rental_price=300.0)
 PB02 = Trailer(build_date='2022-01-03', rental_price=300.0)
 PB03 = Trailer(build_date='2022-01-03', rental_price=300.0)
 
+#Create new contract with current date
 HanenBerg = Contract(name = 'Hanenberg')
-HanenBerg.add_items([BAT001, IV45_001, PB01],'12')
-HanenBerg.items
+HanenBerg.add_items([BAT001, IV45_001, PB01],'8-1-2023')
+HanenBerg
 
+#add duplicate items to test that instance has correct current_contract attritbute
+BAT001
+HanenBerg.add_items([BAT001], '8-1-2022')
+
+#remove item to check updates attribute of current_contract
+HanenBerg.remove_item(BAT001)
+BAT001
+
+#check if contract still keeps track of removed items
+HanenBerg
+
+'''
+#check contract 
+HanenBerg.remove_item()
 contract.add_item([inverter_rack, battery_rack, trailer, trailer])
 contract.remove_item(trailer)
 contract.print_items()
@@ -49,3 +64,4 @@ end_date = datetime(2022, 2, 5)
 
 # Generate an invoice for a 4 week period
 contract.generate_invoice(4)  # Output: Invoice total: 700.00
+'''

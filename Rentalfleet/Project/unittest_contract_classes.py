@@ -34,7 +34,23 @@ HanenBerg.remove_item(BAT001)
 BAT001
 
 #check if contract still keeps track of removed items
-HanenBerg
+HanenBerg.removed_items
+
+#remove rest so i can make a new test with the same items
+HanenBerg.remove_items([PB01])
+
+
+
+
+#create artifical contract
+ERA = Contract(name = 'ERA')
+ERA.add_items([PB01, BAT001, BAT002, IV45_001], start_date= '1-9-2022')
+
+#check if items have current_contract property
+PB01.current_contract
+BAT001.current_contract
+BAT002.current_contract
+IV45_001.current_contract
 
 '''
 #check contract 

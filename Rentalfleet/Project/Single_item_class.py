@@ -8,7 +8,7 @@ class ItemType(Enum):
     INVERTER_RACK = auto()
     BATTERY_RACK = auto()
     TRAILER = auto()
-
+    CABLE = auto()
 
 @dataclass
 class Contract:
@@ -26,7 +26,7 @@ class Contract:
             else:
                 item.current_contract = self.name
                 self.items.append(item)
-                self.total_cost += item.rental_price
+                #self.total_cost += item.rental_price
                 added_items.append(item)
         if not self.start_date:
             self.start_date = start_date
@@ -35,7 +35,7 @@ class Contract:
     def remove_items(self, items: List[Type[ItemType]], end_dates: List[datetime] = None):
         removed_items = []
         for i, item in enumerate(items):
-            if item not in self.items:
+            if item.__class__ not in self.items:
                 print(f'{item.__class__.__name__} is not in contract')
             else:
                 if end_dates and end_dates[i]:
@@ -46,11 +46,15 @@ class Contract:
                 item.previous_contracts.append((item.current_contract, duration))
                 item.current_contract = None
                 self.items.remove(item)
-                self.total_cost -= item.rental_price
                 self.removed_items.append(item)
                 removed_items.append(item)
                 print(f'removing {item.__class__.__name__} from contract')
         return removed_items
+    
+    def get_items(self):
+        def list_items():
+            return self.items
+        return list_items
     
     def generate_invoice(self, period: int):
         invoice_total = 0.0
@@ -62,11 +66,13 @@ class Contract:
 @dataclass
 class RentalItem:
     name: str
-    item_type: ItemType
-    rental_price: float
+    #rental_price: float
+    build_date : str
     current_contract: Type[Contract] = None
     previous_contracts: List[Type[Contract]] = field(default_factory=list)
-
+    
+    def __hash__(self):
+        return hash(self.build_date)
 
     def __hash__(self):
         return hash(self.name)
@@ -81,4 +87,11 @@ class BatteryRack(RentalItem):
 
 @dataclass
 class Trailer(RentalItem):
-    pass
+    laadgewicht : int = 0 
+    assen : int = 0 
+    leeg_gewicht : int = 0
+    
+@dataclass
+class Cable(RentalItem):
+    length : int = 0 
+    amperage : int = 0

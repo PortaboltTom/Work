@@ -1,3 +1,5 @@
+import os
+os.chdir('C:\GIT\Rentalfleet\Project')
 from Single_item_class import *
 # Create some items
 IV_45_001 = InverterRack(name ='IV_45_001', build_date="2022-01-01",  power = 45)
@@ -18,12 +20,18 @@ contract_1 = Contract("Contract 1")
 start_date = datetime(2022, 1, 1)
 items_to_add = [IV_45_001, BAT001, BAT002, PB01]
 added_items = contract_1.add_items(items_to_add, start_date)
-#contract_1.remove_items(PB01)
-list_items = contract_1.get_items()
-items_in_contract = list_items()
-contract_1.remove_items(items_in_contract)
-list_items = contract_1.get_items()
-items_in_contract = list_items()
+contract_1.items
+contract_1.remove_item(IV_45_001)
+contract_1.remove_multiple_items(added_items)
+#tot hier werkt het nu 
+
+'''
+items_in_contract = contract_1.get_items()
+items_name = [item.name for item in items_in_contract]
+contract_1.remove_items(contract_1.items)
+items_in_contract = contract_1.get_items()
+contract_1.remove_items(PB01)
+contract_1.items
 
 #Note to self, ik krijg mijn lijst niet aan de praat waarin ik items tegelijk van het contract verwijder
 #omdat ze niet dezelfde class zijn, chatai werkt niet dus morgen weer een dag. 
@@ -39,7 +47,7 @@ added_items = Nomi.add_items(items_to_add, start_date )
 #week later, add more items
 #2 weeks later remove 2 items
 
-
+'''
 
 '''
 # Print the items in the contract

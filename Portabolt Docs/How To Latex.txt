@@ -1,0 +1,5 @@
+http://web.science.mq.edu.au/~rdale/resources/writingnotes/latexstruct.html
+tutorial over hoe je grote projecten structureerd. 
+
+https://medium.com/@rcpassos/writing-latex-documents-in-visual-studio-code-with-latex-workshop-d9af6a6b2815
+beschrijft hoe je vscode kan gebruiken 

@@ -1,5 +1,0 @@
-doel is om een server op te zetten 
-vanuit daar kunnen we daily prices monitoren, ophalen 
-dan schrijven we een stukje software om de optimale strategie te bepalen 
-zonnepanelen op het dak van de zaak neerleggen en meenemen?
-

@@ -1,0 +1,96 @@
+\documentclass{article} % You can change the document class if needed
+\usepackage[utf8]{inputenc} % Ensure correct encoding
+\usepackage{amsmath} % For mathematical symbols and environments if needed
+\usepackage{enumitem} % For better control of lists
+
+\begin{document}
+
+\section{Scoping en modelling (4 maanden)}
+
+\indent In dit werkpakket zal eerst verder onderzocht worden hoe het verdienmodel er exact uitziet. In de keten zit een afnemer, Portabolt met de hardware en AIP met de connectie naar de beurs. Er zal grondig onderzoek nodig zijn om te achterhalen hoe elke schakel in de keten voldoende waarde krijgt. Er zal ook van tevoren moeten worden nagedacht over hoe elke laag met elkaar communiceert en hierover moeten afspraken gemaakt worden. Er zal in kaart gebracht worden hoe een prototype er precies uitziet en hoe we kunnen bewijzen dat alle stappen die gezet moeten worden haalbaar zijn.
+
+\subsection*{Deliverables:}
+\begin{enumerate}
+    \item Uitgewerkte verdienmodellen per doelgroep en partner
+    \item Functioneel ontwerp contractuele randvoorwaarden van dienstverlening
+    \item Interfaces documentatie (tussen partners)
+    \item Functioneel ontwerp prototype
+\end{enumerate}
+
+\subsection*{Uitgavenplanning begroting:}
+\indent Uren begroot: 740
+
+\subsection{Uitgewerkte verdienmodellen per doelgroep en partner}
+\indent Portabolt Power is een verhuurbedrijf van modulaire mobiele batterijsystemen. In de verhuur draait alles om de bezettingsgraad. Er zijn voor Portabolt Power 3 verschillende businesscases.
+\begin{enumerate}
+    \item De inzet van assets die niet in de verhuur staan
+    \item De inzet van assets bij de klant
+    \item De volledige inzet van assets, stop van de verhuur
+\end{enumerate}
+
+\subsubsection{Inzet van assets die niet in de verhuur staan}
+\indent De bezettingsgraad van Portabolt Power ligt momenteel tussen de 50\% en 60\%. Voor deze analyse gaan we uit van een standaard asset van 15 kVA met 40 kWh batterij. De verhuur opbrengsten van deze asset zijn 450 euro per week. \\
+\indent \textbf{Uitwerken verdienmodel in spreadsheet.}
+
+\subsubsection{De inzet van assets bij de klant}
+\indent Zodra ze bij de klant draaien, kunnen ze ook ingezet worden om een stukje netcongestie te doen. Uitdaging daarbij is dat wanneer een systeem voor peakshaving ergens wordt neergezet, de netaansluiting niet toereikend is. Dit kan alleen nuttig zijn voor specifieke toepassingen waarbij de peakload hoog is.
+
+\subsubsection{De volledige inzet van assets, stop van de verhuur}
+\indent Dit is naar verwachting de meest rendabele businesscase. Er is een omslagpunt vanaf wanneer de continue omzet van assets op de onbalansmarkt lucratiever wordt dan de losse verhuur van batterijen. Dit omslagpunt houden wij nauwlettend in de gaten.
+
+\subsubsection{Uitgewerkte verdienmodellen per doelgroep en partner}
+\begin{enumerate}
+    \item \textbf{Identificeer doelgroepen en partners:} \\
+    \indent Begin met het identificeren van alle belangrijke doelgroepen en partners die betrokken zijn bij het project, zoals afnemers, Portabolt en AIP.
+    \item \textbf{Analyseer toegevoegde waarde:} \\
+    \indent Analyseer voor elke partij de specifieke waarde die zij toevoegen aan het product of de dienst.
+    \item \textbf{Verdienmodel ontwerpen:} \\
+    \indent Ontwerp een verdienmodel voor elke partij, inclusief inkomstenstromen, prijsstructuren, en kostenmodellen.
+    \item \textbf{Rekening houden met belangen:} \\
+    \indent Zorg dat het verdienmodel recht doet aan de belangen van elke partij.
+    \item \textbf{Documentatie en communicatie:} \\
+    \indent Documenteer en communiceer het verdienmodel duidelijk aan alle betrokken partijen.
+\end{enumerate}
+
+\subsection{Functioneel ontwerp contractuele randvoorwaarden van dienstverlening}
+\begin{enumerate}
+    \item \textbf{Definieer contractuele verplichtingen:} \\
+    \indent Identificeer de relevante contractuele verplichtingen tussen de verschillende partners.
+    \item \textbf{Bepaal rechten en verantwoordelijkheden:} \\
+    \indent Specificeer de rechten en verantwoordelijkheden van elke partij binnen de overeenkomst.
+    \item \textbf{Juridische compliance en risicobeheer:} \\
+    \indent Zorg voor juridische naleving en risicobeheer binnen de contractuele randvoorwaarden.
+    \item \textbf{Prijsstructuren en betalingsvoorwaarden:} \\
+    \indent Definieer prijsstructuren en betalingsvoorwaarden duidelijk.
+    \item \textbf{Service Level Agreements (SLA's):} \\
+    \indent Ontwikkel SLA's die de verwachtingen van alle partijen weergeven.
+    \item \textbf{Vertrouwelijkheid en gegevensbescherming:} \\
+    \indent Beheer vertrouwelijkheidsclausules en maatregelen voor gegevensbescherming.
+    \item \textbf{Onderhandeling en goedkeuring:} \\
+    \indent Faciliteer onderhandelingen en zorg voor goedkeuring van de overeenkomst.
+    \item \textbf{Documentatie en ondertekening:} \\
+    \indent Documenteer de contractuele randvoorwaarden en zorg voor ondertekening door alle partijen.
+\end{enumerate}
+
+\subsection{Interfaces documentatie (tussen partners)}
+\begin{enumerate}
+    \item \textbf{Identificeer de vereiste interfaces:} \\
+    \indent Identificeer de interfaces die nodig zijn voor communicatie tussen de partners.
+    \item \textbf{Documenteer de API-specificaties:} \\
+    \indent Documenteer de specificaties van de API, inclusief endpoints, methoden en parameters.
+    \item \textbf{Authenticatie en autorisatie:} \\
+    \indent Specificeer authenticatie- en autorisatievereisten.
+    \item \textbf{Gegevensuitwisseling en protocollen:} \\
+    \indent Beschrijf de gegevensuitwisseling en communicatieprotocollen.
+    \item \textbf{Foutafhandeling en logging:} \\
+    \indent Definieer foutafhandeling en logging binnen de API.
+    \item \textbf{Beveiliging en gegevensbescherming:} \\
+    \indent Adres beveiligingsmaatregelen zoals versleuteling en toegangscontrole.
+    \item \textbf{Testen en validatie:} \\
+    \indent Ontwikkel testcases en validatiemethoden voor de API.
+    \item \textbf{Documentatie en ondersteuning:} \\
+    \indent Lever uitgebreide documentatie en technische ondersteuning voor de API.
+\end{enumerate}
+
+\end{document}
+

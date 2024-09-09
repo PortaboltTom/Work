@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{fancyhdr} % Voor paginanummering en headers/footers
+\usepackage{graphicx} % Voor het invoegen van afbeeldingen
+\setlength{\parindent}{0pt} % Geen inspringing voor alinea's
+\setlength{\parskip}{1em}   % Extra ruimte tussen alinea's
+
+% Pagina-instellingen
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage} % Paginanummering onderaan in het midden
+
+\title{Portabolt Research } % Hier vul je de titel van je document in
+\author{Tom Bergisch , Maikel van Es} % Hier vul je de naam van de auteur in
+\date{10 september 2023} % Vaste datum toevoegen
+
+\begin{document}
+
+\maketitle % Voeg de titel, auteur en datum toe
+
+\tableofcontents % Voeg een automatische inhoudsopgave toe
+\newpage % Start de tekst op een nieuwe pagina na de inhoudsopgave
+
+\section{Inleiding}
+In deze sectie wordt een inleiding gegeven tot het project. Hier kun je uitleg geven over de achtergrond, doelstellingen, en algemene context van het project.
+
+Het project beoogt een gedetailleerde beschrijving en ontwikkeling van verschillende werkpakketten die bijdragen aan de succesvolle uitvoering van het MIT AIP Grant Project.
+
+% Invoegen van werkpakketbestanden
+\input{workpackages/wp1} % Inlezen van werkpakket 1
+\input{workpackages/wp2} % Inlezen van werkpakket 2
+\input{workpackages/wp3} % Inlezen van werkpakket 3
+\input{workpackages/wp4} % Inlezen van werkpakket 4
+\input{workpackages/wp5} % Inlezen van werkpakket 5
+\input{workpackages/wp6} % Inlezen van werkpakket 6
+\input{workpackages/wp7} % Inlezen van werkpakket 7
+
+\end{document}

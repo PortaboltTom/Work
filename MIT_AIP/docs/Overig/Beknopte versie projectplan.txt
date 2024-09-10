@@ -1,0 +1,38 @@
+Samenvatting Project
+De belangrijkste bijdrage van het project is aan MMIP 2: Hernieuwbare elektriciteit
+a. Schaalverkleining van bestaande oplossingen voor de kleine marktpartijen.
+b. Realiseren van toegang tot de markt onder het motto: democratisering/Power-to-the-People.
+c. Eindgebruiker centraal zetten waarmee ze controle en transparantie hebben op verdiensten
+d. Vergroten van de inzet van bestaande assets om milieu- en klimaat-impact van batterijen en energiesysteem te minimaliseren.
+a. Ontwikkelen van mobiele batterijsystemen voor kleinschalige, lokale of tijdelijke netbalancering.
+b. Zonnesystemen afschakelen wanneer overaanbod voor negatieve prijzen zorgt.
+c. Slim EV laden wanneer er veel duurzaam aanbod is, langzamer laden wanneer er tekorten zijn.
+e. Bewustzijn van circulariteit creëren en voorkomen dat (stationaire en EV) batterijen voor einde levensduur worden afgedankt.
+f. Universele laag creëren waarop bestaande en toekomstige flexsystemen kunnen aansluiten.
+
+Projectdoel
+a. Tooling ontwikkelen die kleinschalige en decentrale sturing van opslag, productie en verbruik van duurzame energie mogelijk maakt
+b. Kosten per aangesloten apparaat laag houden 
+c. Extra opbrengsten uit sturing halen 
+
+Concrete eindresultaten 
+a. volledig geintegreerd platform ontwikkelen
+b. platform kan kleinschalige en decentrale energieopslag sturen 
+c. schaalbare software maakt de kosten van sturing zo laag mogelijk
+
+Resultaten voor Portabolt
+a. Circulaire batterijen op basis van gebruikte en overtallige EV batterijen
+b. In de verhuur net balanceren 
+c. Bij niet verhuurd ook net balanceren bij ons op de zaak 
+
+
+Wat kunnen wij overnemen van andere partijen?
+a. Slim laden van auto's edgetech
+b. stuurbare zonnestroom kunnen wij met with the grid doen 
+
+Algemene notities so far: 
+- er moeten 2 systemen meegenomen worden 
+	de kleine batterij 
+	een grotere batterij
+- beide leveren genoeg voer op voor documentatie
+

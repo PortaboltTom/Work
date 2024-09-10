@@ -1,0 +1,35 @@
+wp1 
+- uitwerking verdienmodellen
+- functioneel ontwerp contractuele voorwaarden 
+- interfaces documentatie 
+- functioneel ontwerp prototype
+
+Hoe ziet ons product eruit 
+
+hardware:
+- kleine batterij
+	kleine formfactor
+	ontworpen als thuisbatterij
+	volledige productontwikkeling meenemen 
+	kleine CATL blokjes gebruiken 
+	monitoring en testen van de batterij 
+- grote batterij 
+	container format
+	strukton project gebruiken 
+	uitdagingen met stroomsensor
+	monitoren en testen van de batterij
+- software aansturing
+	python project
+	server laten draaien 
+	aansturen van hardware
+- optimalisatie algoritme voor handelen 
+	paper hardcoden
+	zelf een stukje engineering doen voor optimalisatie
+- extra functionaliteit op het systeem met EV laders
+- uitwerking van ons verdienmodel bij verhuur
+- uitwerking van ons verdienmodel bij alleen onbalans
+- Victron aansturing
+- bms 
+
+
+software:

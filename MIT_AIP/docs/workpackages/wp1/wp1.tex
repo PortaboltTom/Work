@@ -1,20 +1,19 @@
-\section{Werkpakket 1:  Scoping en modelling}
-In dit werkpakket zal eerst verder onderzocht worden hoe het verdienmodel er exact uitziet. In de keten zit een afnemer, Portabolt met de hardware en AIP met de connectie naar de beurs. Er zal grondig onderzoek nodig zijn om te achterhalen hoe elke schakel in de keten voldoende waarde krijgt. Er zal ook van tevoren moeten worden nagedacht over hoe elke laag met elkaar communiceert en hierover moeten afspraken gemaakt worden. Er zal in kaart gebracht worden hoe een prototype er precies uitziet en hoe we kunnen bewijzen dat alle stappen die gezet moeten worden haalbaar zijn. 
+\documentclass[../main.tex]{subfiles}
+\begin{document}
 
-Deliverables: 
+\section{Werkpakket 1: Scoping en modelling}
+In dit werkpakket zal eerst verder onderzocht worden hoe het verdienmodel er exact uitziet. In de keten zit een afnemer, Portabolt met de hardware en AIP met de connectie naar de beurs. Er zal grondig onderzoek nodig zijn om te achterhalen hoe elke schakel in de keten voldoende waarde krijgt. Er zal ook van tevoren moeten worden nagedacht over hoe elke laag met elkaar communiceert en hierover moeten afspraken gemaakt worden. Er zal in kaart gebracht worden hoe een prototype er precies uitziet en hoe we kunnen bewijzen dat alle stappen die gezet moeten worden haalbaar zijn.
+
+\subsection{Deliverables}
 \begin{enumerate}
-	\item Uitgewerkte verdienmodellen per doelgroep en partner
-	\item Functioneel ontwerp contractuele randvoorwaarden van dienstverlening 
-	\item Interfaces documentatie (tussen partners) 
-	\item Functioneel ontwerp prototype 
+    \item Uitgewerkte verdienmodellen per doelgroep en partner
+    \item Functioneel ontwerp contractuele randvoorwaarden van dienstverlening
+    \item Interfaces documentatie (tussen partners)
+    \item Functioneel ontwerp prototype
 \end{enumerate}
 
-Uitgavenplanning begroting: 
-
+\subsection{Uitgavenplanning begroting}
 Uren begroot: 740
-
-
-%\subsection{Uitgewerkte verdienmodellen per doelgroep en partner}
 
 \subsection{Uitgewerkte verdienmodellen per doelgroep en partner}
 
@@ -27,31 +26,20 @@ Voor elke geïdentificeerde partij, analyseer en begrijp de specifieke waarde di
 \subsubsection{Verdienmodel ontwerpen}
 Portabolt Power is een verhuurbedrijf van modulaire mobiele batterijsystemen. In de verhuur draait alles om de bezettingsgraad. Er zijn voor Portabolt Power 3 verschillende businesscases.
 
--	De inzet van assets die niet in de verhuur staan 
--	De inzet van assets bij de klant
--	De volledige inzet van assets, stop van de verhuur
-
-\paragraph{De inzet van assets die niet in de verhuur staan }
-De bezettingsgraad van Portabolt Power ligt momenteel tussen de 50 en 60 procent. Voor deze analyse gaan we uit van een standaard asset 15 kVA met 40 kWh batterij. De verhuur opbrengsten van deze asset zijn 450 euro per week. 
-Uitwerken verdienmodel in spreadsheet
-
+\paragraph{De inzet van assets die niet in de verhuur staan}
+De bezettingsgraad van Portabolt Power ligt momenteel tussen de 50 en 60 procent. Voor deze analyse gaan we uit van een standaard asset van 15 kVA met een 40 kWh batterij. De verhuuropbrengsten van deze asset zijn 450 euro per week. Uitwerken verdienmodel in spreadsheet.
 
 \paragraph{De inzet van assets bij de klant}
-Zodra ze bij de klant draaien kunnen ze ook ingezet worden om een stukje netcongestie te doen. Uitdaging daarbij is wel dat wanneer een systeem voor peakshaving ergens wordt neergezet de netaansluiting niet toereikend is, dus alleen voor specifieke toepassingen waarbij de peakload hoog is kan dit nuttig zijn. 
+Zodra ze bij de klant draaien, kunnen ze ook ingezet worden om netcongestie op te lossen. Dit kan nuttig zijn bij specifieke toepassingen waarbij de peakload hoog is en de netaansluiting niet toereikend is.
 
 \paragraph{De volledige inzet van assets, stop van de verhuur}
-Dit is naar verwachting de meest rendabele businesscase. Er is een omslagpunt vanaf wanneer de continue omzet van assets op de onbalans markt lucratiever wordt dan de losse verhuur van batterijen. Dit omslagpunt houden wij nauwlettend in de gaten. 
-
+Dit is naar verwachting de meest rendabele businesscase. Er is een omslagpunt vanaf wanneer de continue omzet van assets op de onbalansmarkt lucratiever wordt dan de losse verhuur van batterijen. Dit omslagpunt wordt nauwlettend in de gaten gehouden.
 
 \subsubsection{Rekening houden met belangen}
 Zorg ervoor dat het ontwikkelde verdienmodel recht doet aan de belangen en investeringen van elke partij. Het moet een win-winsituatie creëren waarbij alle betrokken partijen profiteren van de samenwerking.
 
-Bijvoorbeeld: Het verdienmodel moet eerlijk zijn voor alle partijen en een evenwicht vinden tussen winstgevendheid en waardecreatie voor de klant.
-
 \subsubsection{Documentatie en communicatie}
 Documenteer het uitgewerkte verdienmodel duidelijk en communiceer het aan alle betrokken partijen. Zorg ervoor dat er een gemeenschappelijk begrip is van hoe elke partij zal profiteren en wat hun verantwoordelijkheden zijn.
-
-Communiceer eventuele wijzigingen of updates in het verdienmodel tijdig en transparant om een soepele samenwerking te garanderen.
 
 \subsection{Functioneel ontwerp contractuele randvoorwaarden van dienstverlening}
 
@@ -59,12 +47,10 @@ Communiceer eventuele wijzigingen of updates in het verdienmodel tijdig en trans
 Begin met het identificeren van alle relevante contractuele verplichtingen die moeten worden vastgelegd tussen de verschillende partners. Dit omvat zaken als serviceniveaus, prijsstructuren, aansprakelijkheid, vertrouwelijkheid en andere voorwaarden die van invloed zijn op de dienstverlening.
 
 \subsubsection{Bepaal rechten en verantwoordelijkheden}
-Specificeer duidelijk de rechten en verantwoordelijkheden van elke partij binnen de overeenkomst. Dit omvat wat elke partij moet leveren, wat ze kunnen verwachten en welke acties moeten worden ondernomen in verschillende scenario's.
+Specificeer duidelijk de rechten en verantwoordelijkheden van elke partij binnen de overeenkomst. Dit omvat wat elke partij moet leveren, wat ze kunnen verwachten, en welke acties moeten worden ondernomen in verschillende scenario's.
 
 \subsubsection{Juridische compliance en risicobeheer}
-Zorg ervoor dat de contractuele randvoorwaarden voldoen aan alle relevante juridische vereisten en standaarden. Dit omvat het identificeren en beheren van eventuele juridische risico's die kunnen ontstaan uit de dienstverlening. 
-
-Uitwerken van de iec normen die relevant zijn:
+Zorg ervoor dat de contractuele randvoorwaarden voldoen aan alle relevante juridische vereisten en standaarden. Dit omvat het identificeren en beheren van eventuele juridische risico's die kunnen ontstaan uit de dienstverlening.
 
 \subsubsection{Prijsstructuren en betalingsvoorwaarden}
 Definieer duidelijk de prijsstructuren voor de diensten die worden geleverd, inclusief eventuele variabele kosten, abonnementskosten of andere tarieven. Specificeer ook de betalingsvoorwaarden, facturatiecycli en eventuele boetes of vergoedingen voor te late betalingen.
@@ -79,11 +65,11 @@ Beheer vertrouwelijkheidsclausules en bepalingen met betrekking tot gegevensbesc
 Faciliteer onderhandelingen tussen de betrokken partijen om tot overeenstemming te komen over de contractuele randvoorwaarden. Zorg ervoor dat alle partijen zich gehoord voelen en dat eventuele geschillen of zorgen worden aangepakt voordat de overeenkomst definitief wordt goedgekeurd.
 
 \subsubsection{Documentatie en ondertekening}
-Documenteer de contractuele randvoorwaarden nauwkeurig en zorg ervoor dat alle betrokken partijen de overeenkomst begrijpen en akkoord gaan met de voorwaarden voordat ze worden ondertekend. Zorg ervoor dat er kopieën worden bewaard voor toekomstige referentie en naleving.
+Documenteer de contractuele randvoorwaarden nauwkeurig en zorg ervoor dat alle betrokken partijen de overeenkomst begrijpen en akkoord gaan met de voorwaarden voordat ze worden ondertekend.
 
 \subsection{Interfaces documentatie (tussen partners)}
 
-\subsection{Identificeer de vereiste interfaces}
+\subsubsection{Identificeer de vereiste interfaces}
 Identificeer alle interfaces die nodig zijn voor de communicatie tussen de partners. In dit geval is het essentieel om de API-specificaties te definiëren die Portabolt Power levert voor de aansturing van het batterijsysteem.
 
 \subsubsection{Documenteer de API-specificaties}
@@ -105,4 +91,6 @@ Adres beveiligingsmaatregelen zoals gegevensversleuteling, beveiligde overdracht
 Ontwikkel testcases en validatiemethoden om ervoor te zorgen dat de API van Portabolt Power correct functioneert en voldoet aan de verwachtingen van de partners. Dit omvat het testen van verschillende scenario's en randgevallen om de robuustheid en betrouwbaarheid van de API te garanderen.
 
 \subsubsection{Documentatie en ondersteuning}
-Lever uitgebreide documentatie voor de API van Portabolt Power, inclusief handleidingen, voorbeelden en API-referenties, om partners te helpen bij het effectief integreren en gebruikmaken van de API. Bied ook technische ondersteuning en begeleiding aan partners indien nodig.
+Lever uitgebreide documentatie voor de API van Portabolt Power, inclusief handleidingen, voorbeelden en API-referenties, om partners te helpen bij het effectief integreren en gebruikmaken van de API.
+
+\end{document}

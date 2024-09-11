@@ -1,18 +1,19 @@
 \documentclass{article}
-\usepackage[a4paper, margin=3cm]{geometry} % Marges instellen op 2 cm rondom
+\usepackage[a4paper, margin=3cm]{geometry} % Marges instellen op 3 cm rondom
 \usepackage{fancyhdr} % Voor paginanummering en headers/footers
 \usepackage{graphicx} % Voor het invoegen van afbeeldingen
 \setlength{\parindent}{0pt} % Geen inspringing voor alinea's
 \setlength{\parskip}{1em}   % Extra ruimte tussen alinea's
 \usepackage{placeins}  % Voeg dit toe aan je preamble
+\usepackage{subfiles}  % Gebruik van de subfiles package
 
 % Pagina-instellingen
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot[C]{\thepage} % Paginanummering onderaan in het midden
 
-\title{Portabolt Research } % Hier vul je de titel van je document in
-\author{Tom Bergisch , Maikel van Es} % Hier vul je de naam van de auteur in
+\title{Portabolt Research} % Hier vul je de titel van je document in
+\author{Tom Bergisch, Maikel van Es} % Hier vul je de naam van de auteur in
 \date{10 september 2023} % Vaste datum toevoegen
 
 \begin{document}
@@ -28,12 +29,14 @@ In deze sectie wordt een inleiding gegeven tot het project. Hier kun je uitleg g
 Het project beoogt een gedetailleerde beschrijving en ontwikkeling van verschillende werkpakketten die bijdragen aan de succesvolle uitvoering van het MIT AIP Grant Project.
 
 % Invoegen van werkpakketbestanden
-\input{workpackages/wp1} % Inlezen van werkpakket 1
-\input{workpackages/wp2} % Inlezen van werkpakket 2
-\input{workpackages/wp3} % Inlezen van werkpakket 3
-\input{workpackages/wp4} % Inlezen van werkpakket 4
-\input{workpackages/wp5} % Inlezen van werkpakket 5
-\input{workpackages/wp6} % Inlezen van werkpakket 6
-\input{workpackages/wp7} % Inlezen van werkpakket 7
+\subfile{workpackages/wp1/wp1} % Inlezen van werkpakket 1
+\subfile{workpackages/wp2/wp2} % Inlezen van werkpakket 2
+\subfile{workpackages/wp3/wp3} % Inlezen van werkpakket 3
+\subfile{workpackages/wp4/wp4} % Inlezen van werkpakket 4
+\subfile{workpackages/wp5/wp5} % Inlezen van werkpakket 5
+\subfile{workpackages/wp6/wp6} % Inlezen van werkpakket 6
+\subfile{workpackages/wp7/wp7} % Inlezen van werkpakket 7
+
 
 \end{document}
+

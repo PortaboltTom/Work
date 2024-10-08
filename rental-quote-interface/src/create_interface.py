@@ -1,8 +1,15 @@
+# create_interface.py
+# Version 2.0: Set working directory to project root before loading data
+# Version 2.1: Updated to use centralized configuration and utility functions for dynamic project root detection
+
 import os
 import pandas as pd
 import tkinter as tk
 from tkinter import ttk
-from src.data_handler import load_and_merge_data, set_working_directory
+from src.data_handler import load_and_merge_data
+from utils import set_working_directory
+
+set_working_directory()
 
 # Function to create the interface window
 def create_interface():

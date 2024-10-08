@@ -1,18 +1,27 @@
 # quote_generator.py
 # Version 2.6: Ensure 'quotes' folder is created in the root project directory
+# Version 3.0: Use centralized configuration and utility functions for working directory and folder creation
+# Version 3.1: Use centralized configuration and utility functions for working directory and folder creation, with dynamic project root detection
 
 import os
+
+project_root = r"C:\GIT\rental-quote-interface"
+os.chdir(project_root)
+
 from reportlab.pdfgen import canvas
 from tkinter import simpledialog
+from config import QUOTES_DIR
+from utils import set_working_directory
+
+
 
 def create_quote(selected_data):
-    # Hardcode the project root to 'rental-quote-interface'
-    project_root = r"C:\GIT\rental-quote-interface"
+    # Set working directory using utility function
+    set_working_directory()
 
     # Create 'quotes' folder in the project root
-    output_dir = os.path.join(project_root, "quotes")
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists(QUOTES_DIR):
+        os.makedirs(QUOTES_DIR)
 
     # Ask for quote details
     system = simpledialog.askstring("Input", "Enter system name:")
@@ -24,7 +33,7 @@ def create_quote(selected_data):
 
     # Generate PDF content for the quote
     company_name = selected_data[0]  # Assuming first column is company name
-    pdf_filename = os.path.join(output_dir, f"quote_{company_name}.pdf")
+    pdf_filename = os.path.join(QUOTES_DIR, f"quote_{company_name}.pdf")
 
     # Create PDF using ReportLab
     c = canvas.Canvas(pdf_filename)
